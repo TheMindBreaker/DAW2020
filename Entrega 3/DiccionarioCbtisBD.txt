@@ -1,0 +1,38 @@
+Diccionario CBTIS
+
+PERMISOS
+La entidad encargada de guardar los permisos para los usuarios
+-IDpermisos:Identificador del permiso
+-Privilegios:El nivel de permisos que otorga
+
+ROL
+
+USUARIO
+Entidad que interactua con el sistema, sus funciones dependen del rol
+que tenga
+-Estatus:Si un usuario sigue activo o no
+-IdUsuario:Identificador del usuario
+-Nombre:Nombre del usuario
+
+Presenta
+Relacion entre usuario y examen. 
+TiempoInicio: Hora en la que se INICIA el examen
+TiempoFin:Hora en la que se CERRO el examen
+Estatus: En curso, Pausado, Finalizado
+
+Crea/Modifica
+Relacion para registrar los cambios que hagan los usuarios
+sobre los campos del examen.
+FechaHora: Fecha con hora en la que se hizo la modificacion
+IdExamen: Identificador del examen que se modifico
+IdUsuario: Identificador del usuario que hizo las modificaciones
+Campos Modificados: Atributos de la entidad examen que se cambiaron
+
+EXAMEN
+Entidad encargada de modelar el examen, contiene toda la informacion
+necesaria para inicializarlo
+-#PreguntasExamen : Es el numero de preguntas que debe contener el examen.
+-IdExamen: Es el identificador unico del examen
+-#Secciones: El numero de secciones que va a contener el examen
+
+
