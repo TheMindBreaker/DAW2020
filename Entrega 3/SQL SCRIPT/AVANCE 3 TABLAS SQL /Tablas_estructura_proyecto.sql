@@ -742,4 +742,114 @@ NSERT INTO `PREGUNTAS` (`ID_Pregunta`, `Recurso_Visual`, `Recurso_Texto`, `ID_Se
 (29, NULL, 'La maestra de matemáticas comienza la clase con este planteamiento: Claudia es tres años mayor que su hermano Luis, y la suma de los cuadrados de ambas edades es117, ¿qué edad tiene cada hermano? Cuatro estudiantes contestan:Alma:Claudia tiene 10 años y Luis 7Gabriela:Claudia tiene 9 años y Luis6Román:Claudia tiene 6 años y Luis 9Jorge:Claudia tiene 11 años y Luis 8¿Quién resolvió correctamente el problema?', 1, 2),
 (30, NULL, 'Ana y Caro van a la tienda a comprar golosinas. Ana paga $20 por 2 chocolates y un paquete de chicles, mientras que a Caro le cobran $33 por 3 chocolates y 2 paquetes de chicles. ¿Cuánto cuesta cada uno de ellos?', 1, 2);
 
---
+
+
+
+/*
+Carga de datos reactivos 
+
+*/ 
+
+INSERT INTO CBTis_control.REACTIVOS(ID_Reactivo, ID_Pregunta, Recurso_Visual, Recurso_Texto, Correcto) VALUES
+(1, 1, NULL, 'Simetria', 1),
+(2, 1, NULL, 'Rotacion', 0),
+(3, 1, NULL, 'Mediatriz', 0),
+(4, 1, NULL, 'Mediana', 0),
+(5, 2, NULL, 'Bisectrices', 1),
+(6, 2, NULL, 'Mediatrices', 0),
+(7, 2, NULL, 'Medianas ', 0),
+(8, 2, NULL, 'Alturas ', 0),
+(9, 3, NULL, '0.125', 1),
+(10, 3, NULL, '0.750', 0),
+(11, 3, NULL, '0.850', 0),
+(12, 3, NULL, '0.875', 0),
+(13, 4, NULL, '0.8 gramos', 1),
+(14, 4, NULL, '1.25 gramos', 0),
+(15, 4, NULL, '8 gramos', 0),
+(16, 4, NULL, '800 gramos', 0),
+(17, 5, NULL, '0.15 km', 0),
+(18, 5, NULL, '1 km', 0),
+(19, 5, NULL, '1.75 km', 0),
+(20, 5, NULL, '1.5 km', 0),
+(21, 6, NULL, '2,000 km', 1),
+(22, 6, NULL, '15,000 km', 0),
+(23, 6, NULL, '30,000 km', 0),
+(24, 6, NULL, '40,000 km', 0),
+(25, 7, NULL, '15cm', 1),
+(26, 7, NULL, '21cm', 0),
+(27, 7, NULL, '25cm', 0),
+(28, 7, NULL, '50cm', 0);
+
+/*
+Carga de datos Roles  
+
+*/ 
+
+
+INSERT INTO CBTis_control.ROL(ID_Rol, Nombre_Rol) VALUES
+(1, 'Estudiante'),
+(2, 'Administrador'),
+(3, 'Maestro'),
+(4, 'Comite');
+
+/*
+Carga de datos Roles  
+
+*/ 
+
+INSERT INTO CBTis_control.SECCION(ID_Seccion, Nombre_Seccion) VALUES
+(1, 'Matematicas'),
+(2, 'Español'),
+(3, 'Ingles'),
+(4, 'Quimica');
+
+/*
+Carga de datos Usuarios  
+
+*/ 
+
+
+INSERT INTO CBTis_control.USUARIOS(ID_Usuarios, Numero_Nomina, ID_Rol, Nombre_Completo, Correo, Telefono_Celular, Contraseña) VALUES
+(1, 17915648, 2, 'Fernando Ruiz Velasco Hernandez', 'maestro1@cbtis.mx', 3314604340, '87jytreweghrtyuijyh4ethy'),
+(2, 98798765, 3, 'Guillermo Vazquez Cervantes ', 'maestro1@cbtis.mx', 4422289007, '32423rd2wedawefa23'),
+(3, 62342634, 3, 'Raziel Baruc ', 'maestro1@cbtis.mx', 2258880909, 'sdfsd65f4s6d5f4s6d5f4s'),
+(4, 23423423, 3, 'Juan Manuel Amador', 'maestro2@cbtis.com', 6546546546, 'dfsd6f54sd6f54s6d5f4sd'),
+(5, 22398478, 3, 'Maestro Test 3', 'maestro3@cbtis.com', 9879879879, 'dsf98sdf79s8d7f9sd87f9sdsdfsdfsd'),
+(6, 23654426, 4, 'Comite Revision de resultados', 'comite@cbtis.com', 2342342332, 'fsds6d54f6sd54fs6d54fsdfs');
+
+/*
+Carga de datos Usuarios  
+
+*/ 
+
+
+
+INSERT INTO CBTis_control.Generacion_Examen_View(Nombre_Exame, Num_Preguntas, Timiempo_Limite, ID_Pregunta, Recurso_Texto_Pregunta, Nombre_Seccion, ID_Reactivo, Recurso_Texto_Reactivo, Recurso_Visual_Reactivo, Correcto) VALUES
+('Examen Ingreso', 130, 120, 1, 'En una clase de pintura para niños de preescolarse presentó una técnica para pintar:a cada  niño  se le facilitó  medio  pliego  de  cartulina  y  un  pequeño  bote  de  pintura.  El procedimiento consistió en derramar la pintura en la cartulina y luego doblarésta por la mitad, ¿Qué técnica de trazo es la que se usó en la pintura?', 'Matematicas', 1, 'Simetria', NULL, 1),
+('Examen Ingreso', 130, 120, 1, 'En una clase de pintura para niños de preescolarse presentó una técnica para pintar:a cada  niño  se le facilitó  medio  pliego  de  cartulina  y  un  pequeño  bote  de  pintura.  El procedimiento consistió en derramar la pintura en la cartulina y luego doblarésta por la mitad, ¿Qué técnica de trazo es la que se usó en la pintura?', 'Matematicas', 2, 'Rotacion', NULL, 0),
+('Examen Ingreso', 130, 120, 1, 'En una clase de pintura para niños de preescolarse presentó una técnica para pintar:a cada  niño  se le facilitó  medio  pliego  de  cartulina  y  un  pequeño  bote  de  pintura.  El procedimiento consistió en derramar la pintura en la cartulina y luego doblarésta por la mitad, ¿Qué técnica de trazo es la que se usó en la pintura?', 'Matematicas', 3, 'Mediatriz', NULL, 0),
+('Examen Ingreso', 130, 120, 1, 'En una clase de pintura para niños de preescolarse presentó una técnica para pintar:a cada  niño  se le facilitó  medio  pliego  de  cartulina  y  un  pequeño  bote  de  pintura.  El procedimiento consistió en derramar la pintura en la cartulina y luego doblarésta por la mitad, ¿Qué técnica de trazo es la que se usó en la pintura?', 'Matematicas', 4, 'Mediana', NULL, 0),
+('Examen Ingreso', 130, 120, 2, 'Un artista diseñóla siguiente abstracción del símbolo yin yang:', 'Matematicas', 5, 'Bisectrices', NULL, 1),
+('Examen Ingreso', 130, 120, 2, 'Un artista diseñóla siguiente abstracción del símbolo yin yang:', 'Matematicas', 6, 'Mediatrices', NULL, 0),
+('Examen Ingreso', 130, 120, 2, 'Un artista diseñóla siguiente abstracción del símbolo yin yang:', 'Matematicas', 7, 'Medianas ', NULL, 0),
+('Examen Ingreso', 130, 120, 2, 'Un artista diseñóla siguiente abstracción del símbolo yin yang:', 'Matematicas', 8, 'Alturas ', NULL, 0),
+('Examen Ingreso', 130, 120, 3, 'Considere la carga completa de la batería de un celular como una unidad;por ejemplo, la  mitad  de  carga 12equivale  a  0.5  de  carga  de  la  batería,  ¿qué  número  decimal representa la carga de batería de 1416', 'Matematicas', 9, '0.125', NULL, 1),
+('Examen Ingreso', 130, 120, 3, 'Considere la carga completa de la batería de un celular como una unidad;por ejemplo, la  mitad  de  carga 12equivale  a  0.5  de  carga  de  la  batería,  ¿qué  número  decimal representa la carga de batería de 1416', 'Matematicas', 10, '0.750', NULL, 0),
+('Examen Ingreso', 130, 120, 3, 'Considere la carga completa de la batería de un celular como una unidad;por ejemplo, la  mitad  de  carga 12equivale  a  0.5  de  carga  de  la  batería,  ¿qué  número  decimal representa la carga de batería de 1416', 'Matematicas', 11, '0.850', NULL, 0),
+('Examen Ingreso', 130, 120, 3, 'Considere la carga completa de la batería de un celular como una unidad;por ejemplo, la  mitad  de  carga 12equivale  a  0.5  de  carga  de  la  batería,  ¿qué  número  decimal representa la carga de batería de 1416', 'Matematicas', 12, '0.875', NULL, 0),
+('Examen Ingreso', 130, 120, 4, 'Mi mamá me manda al mercado por 45de kilo de carne, ¿cuánto debo pedir,en gramos,en la carnicería?', 'Matematicas', 13, '0.8 gramos', NULL, 1),
+('Examen Ingreso', 130, 120, 4, 'Mi mamá me manda al mercado por 45de kilo de carne, ¿cuánto debo pedir,en gramos,en la carnicería?', 'Matematicas', 14, '1.25 gramos', NULL, 0),
+('Examen Ingreso', 130, 120, 4, 'Mi mamá me manda al mercado por 45de kilo de carne, ¿cuánto debo pedir,en gramos,en la carnicería?', 'Matematicas', 15, '8 gramos', NULL, 0),
+('Examen Ingreso', 130, 120, 4, 'Mi mamá me manda al mercado por 45de kilo de carne, ¿cuánto debo pedir,en gramos,en la carnicería?', 'Matematicas', 16, '800 gramos', NULL, 0),
+('Examen Ingreso', 130, 120, 5, 'En  una  competencia  de  natación  por  relevos,  el  primer  competidor  nada 1 2km,  el segundo 35de  km  y  el  tercero  0.400  km,  ¿Cuántos  km  nadaron  entre  los  tres competidores?', 'Matematicas', 17, '0.15 km', NULL, 0),
+('Examen Ingreso', 130, 120, 5, 'En  una  competencia  de  natación  por  relevos,  el  primer  competidor  nada 1 2km,  el segundo 35de  km  y  el  tercero  0.400  km,  ¿Cuántos  km  nadaron  entre  los  tres competidores?', 'Matematicas', 18, '1 km', NULL, 0),
+('Examen Ingreso', 130, 120, 5, 'En  una  competencia  de  natación  por  relevos,  el  primer  competidor  nada 1 2km,  el segundo 35de  km  y  el  tercero  0.400  km,  ¿Cuántos  km  nadaron  entre  los  tres competidores?', 'Matematicas', 19, '1.75 km', NULL, 0),
+('Examen Ingreso', 130, 120, 5, 'En  una  competencia  de  natación  por  relevos,  el  primer  competidor  nada 1 2km,  el segundo 35de  km  y  el  tercero  0.400  km,  ¿Cuántos  km  nadaron  entre  los  tres competidores?', 'Matematicas', 20, '1.5 km', NULL, 0),
+('Examen Ingreso', 130, 120, 6, 'Mi papá debe cambiar el aceite a su automóvil nuevo a los 10000 km. yajustar los frenos a los 6000 km. ¿A qué kilometraje deberá cambiar el aceite y ajustarlosfrenos al mismo tiempo?', 'Matematicas', 21, '2,000 km', NULL, 1),
+('Examen Ingreso', 130, 120, 6, 'Mi papá debe cambiar el aceite a su automóvil nuevo a los 10000 km. yajustar los frenos a los 6000 km. ¿A qué kilometraje deberá cambiar el aceite y ajustarlosfrenos al mismo tiempo?', 'Matematicas', 22, '15,000 km', NULL, 0),
+('Examen Ingreso', 130, 120, 6, 'Mi papá debe cambiar el aceite a su automóvil nuevo a los 10000 km. yajustar los frenos a los 6000 km. ¿A qué kilometraje deberá cambiar el aceite y ajustarlosfrenos al mismo tiempo?', 'Matematicas', 23, '30,000 km', NULL, 0),
+('Examen Ingreso', 130, 120, 6, 'Mi papá debe cambiar el aceite a su automóvil nuevo a los 10000 km. yajustar los frenos a los 6000 km. ¿A qué kilometraje deberá cambiar el aceite y ajustarlosfrenos al mismo tiempo?', 'Matematicas', 24, '40,000 km', NULL, 0),
+('Examen Ingreso', 130, 120, 7, 'En la construcción de departamentos se desea colocar loseta cuadrada en los pisos del edificio;si  cada  uno  tiene  1350cm  de  ancho  y  1700cm  de  largo,  ¿cuáles  son  las dimensiones máximas de cada loseta?', 'Matematicas', 25, '15cm', NULL, 1),
+('Examen Ingreso', 130, 120, 7, 'En la construcción de departamentos se desea colocar loseta cuadrada en los pisos del edificio;si  cada  uno  tiene  1350cm  de  ancho  y  1700cm  de  largo,  ¿cuáles  son  las dimensiones máximas de cada loseta?', 'Matematicas', 26, '21cm', NULL, 0),
+('Examen Ingreso', 130, 120, 7, 'En la construcción de departamentos se desea colocar loseta cuadrada en los pisos del edificio;si  cada  uno  tiene  1350cm  de  ancho  y  1700cm  de  largo,  ¿cuáles  son  las dimensiones máximas de cada loseta?', 'Matematicas', 27, '25cm', NULL, 0),
+('Examen Ingreso', 130, 120, 7, 'En la construcción de departamentos se desea colocar loseta cuadrada en los pisos del edificio;si  cada  uno  tiene  1350cm  de  ancho  y  1700cm  de  largo,  ¿cuáles  son  las dimensiones máximas de cada loseta?', 'Matematicas', 28, '50cm', NULL, 0);
