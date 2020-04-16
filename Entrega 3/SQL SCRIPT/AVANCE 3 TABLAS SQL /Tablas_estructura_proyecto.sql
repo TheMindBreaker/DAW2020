@@ -105,6 +105,7 @@ CREATE TABLE PREGUNTAS (
   Recurso_Visual varchar(255) DEFAULT NULL,
   Recurso_Texto text DEFAULT NULL,
   ID_Seccion int(11) DEFAULT NULL,
+  ID_Examen int(11) DEFAULT NULL,
   PRIMARY KEY (ID_Pregunta)
 )
 ENGINE = INNODB,
@@ -115,8 +116,13 @@ COLLATE utf8_spanish2_ci;
 -- Create foreign key
 --
 ALTER TABLE PREGUNTAS
-ADD CONSTRAINT FK_PREGUNTAS_ID_Seccion FOREIGN KEY (ID_Seccion)
+ADD CONSTRAINT FK_PREGUNTAS_ID_Seccion  FOREIGN KEY (ID_Seccion)
 REFERENCES SECCION (ID_Seccion) ON DELETE NO ACTION;
+
+ALTER TABLE PREGUNTAS
+ADD CONSTRAINT FK_PREGUNTAS_ID_Examen  FOREIGN KEY (ID_Examen)
+REFERENCES SECCION (ID_Examen) ON DELETE NO ACTION;
+
 
 --
 -- Create table `REACTIVOS`
@@ -694,3 +700,46 @@ INSERT INTO ESTUDIANTES VALUES
 (NULL, 20200003, 'HEMG050520HQTRNVA1', NULL, 'GIOVANNI', 'HERNÁNDEZ', 'MENDOZA', 'judith.hernandez_27@hotmail.com', NULL, '6308656', '4428208562', 'MECATRÓNICA', 'MECÁNICA INDUSTRIAL', 'LOGÍSTICA', 'QUERETARO', 'CORREGIDORA', 'CORREGIDORA', 'QUERETARO', 'SANTA BARBARA', 'SANTA BARBARA', 'FRANCISCO CARBAJAL #44', '76906', 'ROSALINDA MENDOZA OVIEDO', '4424616530', NULL, NULL, NULL),
 (NULL, 20200002, 'AAIL050328HQTRSSA9', NULL, 'LUIS FELIPE', 'ARANDA', 'ISASSI', 'felipeisassiaranda4a@gmail.com', NULL, '4424046213', '4424140684', 'MECATRÓNICA', 'ELECTRÓNICA', 'MECÁNICA INDUSTRIAL', 'QUERETARO', 'QUERETARO', 'QUERETARO', 'QUERETARO', 'EL MARQUÉS', 'LA PRADERA', 'CORZO 1#2', '76269', 'BEATRIZ ADRIANA ISASSI CENTENO', '44276215', NULL, NULL, NULL),
 (NULL, 20200001, 'GUNG050811HQTRUDA3', NULL, 'JOSE GUADALUPE', 'GUERRERO', 'NAVARRO', 'mcgn_001@hotmail.com', NULL, '4428581742', '4421260129', 'MECATRÓNICA', 'PROGRAMACIÓN', 'LOGÍSTICA', 'QUERETARO', 'QUERETARO', 'QUERETARO', 'QUERETARO', 'SANTA BARBARA', 'SANTA BARBARA', 'ADOLFO DE LA HUERTA NO. 47', '76906', 'MARIA DEL ROSARIO GUERRERO NAVARRO', '4421260129', NULL, NULL, NULL);
+
+
+
+/*
+
+CARGA DE DATOS DE PREGUNTAS 
+*/
+
+
+
+NSERT INTO `PREGUNTAS` (`ID_Pregunta`, `Recurso_Visual`, `Recurso_Texto`, `ID_Seccion`, `ID_Examen`) VALUES
+(1, NULL, 'En una clase de pintura para niños de preescolarse presentó una técnica para pintar:a cada  niño  se le facilitó  medio  pliego  de  cartulina  y  un  pequeño  bote  de  pintura.  El procedimiento consistió en derramar la pintura en la cartulina y luego doblarésta por la mitad, ¿Qué técnica de trazo es la que se usó en la pintura?', 1, 2),
+(2, NULL, 'Un artista diseñóla siguiente abstracción del símbolo yin yang:', 1, 2),
+(3, NULL, 'Considere la carga completa de la batería de un celular como una unidad;por ejemplo, la  mitad  de  carga 12equivale  a  0.5  de  carga  de  la  batería,  ¿qué  número  decimal representa la carga de batería de 1416', 1, 2),
+(4, NULL, 'Mi mamá me manda al mercado por 45de kilo de carne, ¿cuánto debo pedir,en gramos,en la carnicería?', 1, 2),
+(5, NULL, 'En  una  competencia  de  natación  por  relevos,  el  primer  competidor  nada 1 2km,  el segundo 35de  km  y  el  tercero  0.400  km,  ¿Cuántos  km  nadaron  entre  los  tres competidores?', 1, 2),
+(6, NULL, 'Mi papá debe cambiar el aceite a su automóvil nuevo a los 10000 km. yajustar los frenos a los 6000 km. ¿A qué kilometraje deberá cambiar el aceite y ajustarlosfrenos al mismo tiempo?', 1, 2),
+(7, NULL, 'En la construcción de departamentos se desea colocar loseta cuadrada en los pisos del edificio;si  cada  uno  tiene  1350cm  de  ancho  y  1700cm  de  largo,  ¿cuáles  son  las dimensiones máximas de cada loseta?', 1, 2),
+(8, NULL, 'Mi papa,es diabético y toma tres medicamentos en tableta: Metformina cada 8 horas, Zintrepidcada 24 horas y Januvia cada 12 horas.', 1, 2),
+(9, NULL, 'Un barquillo para helado,en forma de cono tiene 7cm de diámetro yuna profundidad de 12cm, ¿qué capacidad tiene?', 1, 2),
+(10, NULL, 'El acomodo de escritorios dentro de una oficina está dispuesto como se muestra en la figura, ¿cuál es eláreatotal de trabajo?', 1, 2),
+(11, NULL, 'En  unnegocio se colocará  un  anuncio  con  un  emoji  para  atraer  la  atención  de losclientes, como se muestra en la siguiente figura ¿Cuánto material se utilizará enlos dos ojos? (Considera π=3.14).', 1, 2),
+(12, NULL, 'Se ha construido un juego giratorio en forma dehexágono regular, donde el eje de giro es el centro de dicho hexágono. ¿Qué cantidad de cadena se tiene que comprar para ponerlaalrededor del  juego,  comoprotección?,  se  sabe  que  la  distancia del  centro a cada vértice es de 1.5 m.', 1, 2),
+(13, NULL, 'El logo de un auto deportivo está formado por un contorno circular y cuatro líneas de 5 cm  de  longitud  que  parten  del  centro,  ¿cuánto  mide  el  contorno  del  logo?  (considera π=3.14)', 1, 2),
+(14, NULL, 'Si arepresenta manzanas rojas, bmanzanas amarillas y cmanzanas verdes, ¿cuántas manzanas de cada color se tendrán, si se tiene la expresión 3a –5b + 4c –2c + 7b –2a + 3c + 7a + 4b?', 1, 2),
+(15, NULL, 'Para la balanza que se muestra a continuación, ¿cuál debe ser la expresión del lado derecho, para que ésta se mantenga en equilibrio?', 1, 2),
+(16, NULL, 'El autobús que se contrata para una visita escolarcobra una cuota fija,sin importar la cantidad de alumnos. Inicialmente iban a asistir 25alumnos y cada uno pagaría $50;sin embargo, sólo 20 alumnos confirmaron. ¿Cuánto tendrá que pagar cada alumno?', 1, 2),
+(17, NULL, 'En diciembre de 2016 el precio de la gasolina Magna en laCiudad de México era de $13.62; el  primer  incremento  en  2017 fue  de  $2.68,  ¿qué  porcentaje  representa  este aumento?', 1, 2),
+(18, NULL, 'La distancia entre dos puntos,en un mapa a escala 1:15000, es de 5.8cm ¿Cuál es la distancia real entre ellos?', 1, 2),
+(19, NULL, 'Axel se prepara para nadar 200 m estilo libre y registra sus tiempos en la siguiente tabla:', 1, 2),
+(20, NULL, 'En una fábrica de mosaicos, los terminados se colocan conforme a la siguiente serie:', 1, 2),
+(21, NULL, 'Si los lados de un rectángulo están representados por las expresiones indicadas en el esquema, ¿el área está determinada por el término', 1, 2),
+(22, NULL, 'Mi  tío  tiene  un  terreno  rectangular  de  243  m2, cuyo  largo  es el  triple  de  su  ancho. ¿Cuántos metros de cerca tiene que comprar para ponerlaalrededor? ', 1, 2),
+(23, NULL, 'Observa la siguiente Figura\r\n¿Qué distancia separa a los objetos?', 1, 2),
+(24, NULL, 'Un estudiante realiza una réplica exacta,a escala,de una pirámide, la cual debe tener una base de 0.3 m. Calcula la diagonal “x” de la réplica,para empezar la construcción.', 1, 2),
+(25, NULL, 'Dos niños platican: “En latienda comprédos chocolates y una paleta por $18, dice uno. El  otro  comenta a  mí  me  cobraron  $21  por  un  chocolate  y  dos  paletas”  ¿Qué expresiones permitiránsaber el costo de cada producto?', 1, 2),
+(26, NULL, 'El largo de una cancha de futbol es 35m mayor que su ancho. Si su área es de 6500 m2,¿cuál es la ecuación para calcular su ancho?', 1, 2),
+(27, NULL, 'Armando tienemonedas de dos denominaciones diferentes.Si tiene15 de un valor y 8 del otro, ¿qué expresión ayudaráa adivinar de qué denominación son lasdos monedas, sabiendo que en total tiene $70 pesos y que la suma de una moneda de cada valor es $7?', 1, 2),
+(28, NULL, 'En la clase de matemáticas, el profesor les dice a sus alumnos, “piensen en un número, multiplíquenlo por 4 ya lo que resulte, súmenle 10;finalmente dividan el resultado entre 2”. Pregunta entonces a un niño: ¿Cuánto  te  dio?  A  lo  que  éste  responde  35¿Qué número dirá el maestro,que pensó el niño? ', 1, 2),
+(29, NULL, 'La maestra de matemáticas comienza la clase con este planteamiento: Claudia es tres años mayor que su hermano Luis, y la suma de los cuadrados de ambas edades es117, ¿qué edad tiene cada hermano? Cuatro estudiantes contestan:Alma:Claudia tiene 10 años y Luis 7Gabriela:Claudia tiene 9 años y Luis6Román:Claudia tiene 6 años y Luis 9Jorge:Claudia tiene 11 años y Luis 8¿Quién resolvió correctamente el problema?', 1, 2),
+(30, NULL, 'Ana y Caro van a la tienda a comprar golosinas. Ana paga $20 por 2 chocolates y un paquete de chicles, mientras que a Caro le cobran $33 por 3 chocolates y 2 paquetes de chicles. ¿Cuánto cuesta cada uno de ellos?', 1, 2);
+
+--
