@@ -32,6 +32,7 @@ credentials need to be JWT tokent encrypted hash256 with secret with .cert in th
 
 Selfsigned TLS certificate and SSL by let's encrypt
 
+Test script and tool POSTMAN(script CNSMX-0856.sh) [Just reference]
 
 
 Conexion Temporal servidor base de datos:
