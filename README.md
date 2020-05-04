@@ -28,7 +28,7 @@ https://github.com/TheMindBreaker/CBtis-API
 API URL
 https://apicbtis.construtec.xyz
 
-credentials need to be JWT tokent encrypted hash256 with secret
+credentials need to be JWT tokent encrypted hash256 with secret with .cert in the config file. Not in github
 
 Selfsigned TLS certificate and SSL by let's encrypt
 
